@@ -24,14 +24,25 @@ build/
 *.sqlite
 *.sqlite3
 *.db
+*.sql
 *.sql.gz
+*.dump
 *.bak
 backups/
 logs/
 *.log
+
+# Exporty a soubory s daty (zákazníci, faktury …)
+*.csv
+*.xlsx
+*.xls
+exports/
 
 # Systém a editory
 .DS_Store
 Thumbs.db
 .vscode/
 .idea/
+
+# Osobní nastavení Claude Code
+.claude/settings.local.json

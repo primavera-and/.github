@@ -6,6 +6,7 @@
 
 | | |
 |---|---|
+| **Úroveň aplikace** | 🟢 zelená / 🟠 oranžová / 🔴 červená (určuje IT) |
 | **Správce (odpovědná osoba)** | jméno, e-mail |
 | **Zástup** | jméno, e-mail |
 | **Uživatelé** | kdo aplikaci používá (oddělení, země) |
@@ -54,6 +55,29 @@ git pull
 |---|---|---|
 | `ABRA_API_URL` | adresa Abra Web API | správce hesel |
 | `ABRA_API_USER` | servisní účet | správce hesel |
+
+## Zátěž Abry
+
+Vyplnit, pokud aplikace čte z Abry (viz `CLAUDE.md`, část 4A). Nové napojení nebo vyšší zátěž předem probrat s IT.
+
+| | |
+|---|---|
+| **Servisní účet** | název účtu (heslo jen ve správci hesel) |
+| **User-Agent** | `název-repozitáře/verze` |
+| **Agendy a intervaly přes den** | např. `issuedinvoices` každých 15 min (:02, :17, :32, :47) |
+| **Dotazů za hodinu přes den** | odhad, limit je 150 |
+| **Noční dávky** | co, kdy, kolik dotazů |
+| **Zápis do Abry** | ne / ano – písemný souhlas IT ze dne … |
+
+## Kontrola bezpečnosti
+
+Doplňuje Claude při kontrole před nasazením (`CLAUDE.md`, část 2c).
+
+- datum, výsledek, seznam stránek a endpointů s přihlášením a rolí, audit závislostí, co zbývá opravit
+
+## Pojistky pro Clauda
+
+Složka `.claude/` obsahuje háčky, které Claudovi zablokují nebezpečné akce: zápis hesel do souborů, čtení `.env`, `git push --force` na `main`, mazání mimo projekt, `DROP`/`TRUNCATE` a zápis do Abry. Nemažte je. Funkčnost ověří `bash .claude/hooks/test-ochrana.sh`; testy se spouštějí i automaticky na GitHubu spolu s hledáním hesel (gitleaks).
 
 ## Známé problémy a poznámky
 
