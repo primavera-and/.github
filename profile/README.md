@@ -30,7 +30,7 @@ Tady jsou všechny interní aplikace firmy. Většinu z nich píšou manažeři 
 - Každá aplikace je v organizaci `primavera-and`, ne na osobním účtu.
 - Každá aplikace je zapsaná v registru aplikací a má **správce a zástup**.
 - Napojení na Abru, Google a další služby jen přes servisní účet od IT. Výchozí oprávnění je jen pro čtení. Účtů do Abry je omezený počet, proto je přiděluje jen IT a aplikace je mohou sdílet.
-- Data z Abry si s Claudem můžete přečíst i sami, bez aplikace. Postup je v soukromém repozitáři `abra-api`: jen čtení, heslo vám dá IT.
+- Data z Abry si s Claudem můžete přečíst i sami, bez aplikace (jen čtení). Požádejte IT o přístup k soukromému repozitáři `abra-api` a o heslo. Pak napište Claudovi: *„Připoj se k Abře podle firemního návodu. Naklonuj repozitář https://github.com/primavera-and/abra-api do složky Dokumenty\Primavera Andorrana\abra-api a postupuj přesně podle jeho souboru CLAUDE.md.“*
 - Nové domény, externí služby a předplatné jen přes IT, a to i ty „zkušební“.
 - Aplikaci, kterou už nikdo nepoužívá, IT vypne a repozitář archivuje.
 
