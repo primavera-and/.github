@@ -55,6 +55,9 @@ git pull
 |---|---|---|
 | `ABRA_API_URL` | adresa Abra Web API | správce hesel |
 | `ABRA_API_USER` | servisní účet | správce hesel |
+| `MERENI_URL` | adresa firemního měřicího serveru | IT |
+| `MERENI_WEBSITE_ID` | ID aplikace v měřicím serveru | IT |
+| `MERENI_SUL` | tajná hodnota pro anonymizaci uživatelů | správce hesel |
 
 ## Zátěž Abry
 
@@ -68,6 +71,31 @@ Vyplnit, pokud aplikace čte z Abry (viz `CLAUDE.md`, část 4A). Nové napojen�
 | **Dotazů za hodinu přes den** | odhad, limit je 150 |
 | **Noční dávky** | co, kdy, kolik dotazů |
 | **Zápis do Abry** | ne / ano – písemný souhlas IT ze dne … |
+
+## Měření používání
+
+Vyplňuje autor s Claudem při vzniku aplikace a Claude ho udržuje aktuální (`CLAUDE.md`, část 7A).
+
+| | |
+|---|---|
+| **Co aplikace nahrazuje** | např. ruční zpracování exportu v Excelu, e-maily s objednávkami |
+| **ID v měřicím serveru** | přiděluje IT (`MERENI_WEBSITE_ID` v `.env`) |
+| **Role uživatelů** | např. `manazer`, `obchodnik`, `klient` |
+
+### Klíčové úkoly
+
+| Úkol (`ukol`) | Popis | Jak dlouho trval dřív | Cíl |
+|---|---|---|---|
+| `zpracovani_faktur` | nahrání a kontrola měsíčních faktur | cca 2 hodiny | do 20 minut |
+
+### Události
+
+| Událost | Kdy se posílá | Data |
+|---|---|---|
+| `aktivni` | jednou za minutu, když uživatel aplikaci aktivně používá | – |
+| `ukol_start` / `ukol_hotovo` | začátek a dokončení klíčového úkolu | `ukol`, `sekundy` |
+| `chyba` | chyba na serveru (500) | – |
+| `export_reportu` | příklad: stažení reportu | `typ` |
 
 ## Kontrola bezpečnosti
 
